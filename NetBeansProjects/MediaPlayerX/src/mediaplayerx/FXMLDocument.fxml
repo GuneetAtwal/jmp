@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mediaplayerx.FXMLDocumentController">
+   <bottom>
+      <VBox fx:id="controlPanel" alignment="CENTER" maxHeight="40.0" prefHeight="40.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="openFileButton" alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#openFile" prefHeight="32.0" prefWidth="32.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="playButton" alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="32.0" prefWidth="32.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="pauseButton" alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#pauseMedia" prefWidth="32.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="stopButton" alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#stopMedia" prefHeight="32.0" prefWidth="32.0" />
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Slider fx:id="volumeSlider">
+                           <HBox.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </HBox.margin>
+                        </Slider>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+            <Slider fx:id="seekSlider" stylesheets="@style.css" StackPane.alignment="BOTTOM_CENTER" />
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
